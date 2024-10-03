@@ -12,6 +12,7 @@ namespace MultiShop.Catalog.Mapping
         public GeneralMapping()
         {
             // mapleme işlemi ! 
+
             CreateMap<Category, ResultCategoryDto>().ReverseMap();
             CreateMap<Category, CreateCategoryDto>().ReverseMap();
             CreateMap<Category, UpdateCategoryDto>().ReverseMap();
