@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 namespace MultiShop.Order.Persistence.Context
 {
     public class OrderContext:DbContext
-    {
+    { //  burada baglıyoruz dockeri 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost,1440;initial Catalog=MultiShopOrderDb;User=sa;Password=123456aA*");
+            optionsBuilder.UseSqlServer("Server=localhost,1440;initial Catalog=MultiShopOrderDb;User=sa;Password=Yunusemre5441@");
         }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
