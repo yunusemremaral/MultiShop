@@ -12,8 +12,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
 {
+    // jwt kýsmý bu þekilde  hermikro serviste olucak !!
     opt.Authority = builder.Configuration["IdentityServerUrl"];
-    opt.Audience = "ResourceCatalog";
+    opt.Audience = "ResourceDiscount";
     opt.RequireHttpsMetadata = false;
 });
 
@@ -49,7 +50,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
