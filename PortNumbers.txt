@@ -2,3 +2,4 @@
 7070 catalog
 7071 discount 
 7072 order
+7073 cargo

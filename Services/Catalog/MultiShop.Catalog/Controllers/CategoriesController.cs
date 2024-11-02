@@ -51,5 +51,6 @@ namespace MultiShop.Catalog.Controllers
             await _categoryService.UpdateCategoryAsync(updateCategoryDto);
             return Ok("Category başarıyla güncellendi ");
         }
+        // generate new endpoint take 5 data 
     }
 }
