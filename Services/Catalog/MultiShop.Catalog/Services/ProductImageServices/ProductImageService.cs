@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MongoDB.Driver;
 using MultiShop.Catalog.Dtos.ProductImageDtos;
-using MultiShop.Catalog.Entities;
+using MultiShop.Catalog.Entites;
 using MultiShop.Catalog.Settings;
 
 namespace MultiShop.Catalog.Services.ProductImageServices
@@ -25,12 +25,18 @@ namespace MultiShop.Catalog.Services.ProductImageServices
 
         public async Task DeleteProductImageAsync(string id)
         {
-            await _ProductImageCollection.DeleteOneAsync(x => x.ProductImageId == id);
+            await _ProductImageCollection.DeleteOneAsync(x => x.ProductImageID == id);
         }
 
         public async Task<GetByIdProductImageDto> GetByIdProductImageAsync(string id)
         {
-            var values = await _ProductImageCollection.Find<ProductImage>(x => x.ProductImageId == id).FirstOrDefaultAsync();
+            var values = await _ProductImageCollection.Find<ProductImage>(x => x.ProductImageID == id).FirstOrDefaultAsync();
+            return _mapper.Map<GetByIdProductImageDto>(values);
+        }
+
+        public async Task<GetByIdProductImageDto> GetByProductIdProductImageAsync(string id)
+        {
+            var values = await _ProductImageCollection.Find(x => x.ProductId == id).FirstOrDefaultAsync();
             return _mapper.Map<GetByIdProductImageDto>(values);
         }
 
@@ -43,8 +49,7 @@ namespace MultiShop.Catalog.Services.ProductImageServices
         public async Task UpdateProductImageAsync(UpdateProductImageDto updateProductImageDto)
         {
             var values = _mapper.Map<ProductImage>(updateProductImageDto);
-            await _ProductImageCollection.FindOneAndReplaceAsync(x => x.ProductImageId == updateProductImageDto.ProductImageID, values);
+            await _ProductImageCollection.FindOneAndReplaceAsync(x => x.ProductImageID == updateProductImageDto.ProductImageID, values);
         }
-
     }
 }
