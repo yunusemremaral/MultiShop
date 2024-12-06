@@ -6,7 +6,7 @@ using MultiShop.DtoLayer.CatalogDtos.ProductDtos;
 using Newtonsoft.Json;
 using System.Text;
 
-namespace MultiShop.WebUI.Areas.Admin.Controllers
+namespace MultiShot.WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [AllowAnonymous]
