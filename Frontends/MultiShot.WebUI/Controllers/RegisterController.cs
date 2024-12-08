@@ -3,7 +3,7 @@ using MultiShop.DtoLayer.IdentityDtos.RegisterDtos;
 using Newtonsoft.Json;
 using System.Text;
 
-namespace MultiShop.WebUI.Controllers
+namespace MultiShot.WebUI.Controllers
 {
     public class RegisterController : Controller
     {
