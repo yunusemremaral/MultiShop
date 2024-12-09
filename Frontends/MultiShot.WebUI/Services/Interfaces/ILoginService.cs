@@ -1,4 +1,4 @@
-﻿namespace MultiShot.WebUI.Services
+﻿namespace MultiShot.WebUI.Services.Interfaces
 {
     public interface ILoginService
     {

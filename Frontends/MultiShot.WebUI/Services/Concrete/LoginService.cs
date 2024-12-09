@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
+using MultiShot.WebUI.Services.Interfaces;
 
-namespace MultiShot.WebUI.Services
+namespace MultiShot.WebUI.Services.Concrete
 {
     public class LoginService : ILoginService
     {

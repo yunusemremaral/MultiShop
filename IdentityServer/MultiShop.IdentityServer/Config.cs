@@ -84,7 +84,7 @@ namespace MultiShop.IdentityServer
                 IdentityServerConstants.LocalApi.ScopeName,
                 IdentityServerConstants.StandardScopes.Email,
                 IdentityServerConstants.StandardScopes.OpenId,
-                IdentityServerConstants.StandardScopes.Profile
+                IdentityServerConstants.StandardScopes.Profile   // kullanııc degerlerini getiriyoruz burada ...
                 },
                 AccessTokenLifetime=600
             }
