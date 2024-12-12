@@ -14,12 +14,18 @@ namespace MultiShot.WebUI.Controllers
         }
         public IActionResult Index(string id)
         {
+            ViewBag.directory1 = "Ana Sayfa";
+            ViewBag.directory2 = "Ürünler";
+            ViewBag.directory3 = "Ürün Listesi";
             ViewBag.i = id;
             return View();
         }
 
         public IActionResult ProductDetail(string id)
         {
+            ViewBag.directory1 = "Ana Sayfa";
+            ViewBag.directory2 = "Ürün Listesi";
+            ViewBag.directory3 = "Ürün Detayları";
             ViewBag.x = id;
             return View();
         }
@@ -41,7 +47,7 @@ namespace MultiShot.WebUI.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createCommentDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("https://localhost:7241/api/Comments", stringContent);
+            var responseMessage = await client.PostAsync("https://localhost:7028/api/Comments", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index", "Default");

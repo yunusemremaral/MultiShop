@@ -7,7 +7,7 @@ using MultiShop.Catalog.Services.ContactServices;
 using MultiShop.Catalog.Services.FeatureServices;
 using MultiShop.Catalog.Services.FeatureSliderServices;
 using MultiShop.Catalog.Services.OfferDiscountServices;
-using MultiShop.Catalog.Services.ProductDetailServices;
+using MultiShop.Catalog.Services.ProductDetailDetailServices;
 using MultiShop.Catalog.Services.ProductImageServices;
 using MultiShop.Catalog.Services.ProductServices;
 using MultiShop.Catalog.Services.SpecialOfferServices;

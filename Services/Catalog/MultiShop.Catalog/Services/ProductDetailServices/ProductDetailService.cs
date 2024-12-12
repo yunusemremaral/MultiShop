@@ -5,7 +5,7 @@ using MultiShop.Catalog.Entites;
 using MultiShop.Catalog.Entities;
 using MultiShop.Catalog.Settings;
 
-namespace MultiShop.Catalog.Services.ProductDetailServices
+namespace MultiShop.Catalog.Services.ProductDetailDetailServices
 {
     public class ProductDetailService : IProductDetailService
     {

@@ -23,12 +23,6 @@ namespace MultiShop.Catalog.Controllers
             var values = await _productService.GetAllProductAsync();
             return Ok(values);
         }
-        [HttpGet("ProductListWithCategory")]
-        public async Task<IActionResult> ProductListWithCategory()
-        {
-            var values = await _productService.GetProductsWithCategoryAsync();
-            return Ok(values);
-        }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProductById(string id)
@@ -58,14 +52,18 @@ namespace MultiShop.Catalog.Controllers
             return Ok("Ürün başarıyla güncellendi");
         }
 
-        [HttpGet("ProductListWithCategoryByCategoryId")]
+        [HttpGet("ProductListWithCategory")]
+        public async Task<IActionResult> ProductListWithCategory()
+        {
+            var values = await _productService.GetProductsWithCategoryAsync();
+            return Ok(values);
+        }
+
+        [HttpGet("ProductListWithCategoryByCategoryId/{id}")]
         public async Task<IActionResult> ProductListWithCategoryByCategoryId(string id)
         {
             var values = await _productService.GetProductsWithCategoryByCatetegoryIdAsync(id);
             return Ok(values);
         }
-
-
-
     }
 }
