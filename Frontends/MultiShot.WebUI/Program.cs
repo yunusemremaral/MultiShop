@@ -12,6 +12,7 @@ using MultiShot.WebUI.Services.CatalogServices.ProductDetailServices;
 using MultiShot.WebUI.Services.CatalogServices.ProductImageServices;
 using MultiShot.WebUI.Services.CatalogServices.ProductServices;
 using MultiShot.WebUI.Services.CatalogServices.SpecialOfferServices;
+using MultiShot.WebUI.Services.CommentServices;
 using MultiShot.WebUI.Services.Concrete;
 using MultiShot.WebUI.Services.Interfaces;
 using MultiShot.WebUI.Settings;
@@ -114,6 +115,10 @@ builder.Services.AddHttpClient<IProductDetailService, ProductDetailService>(opt 
     opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.Catalog.Path}");
 }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
 
+builder.Services.AddHttpClient<ICommentService, CommentService>(opt =>
+{
+    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.Comment.Path}");
+}).AddHttpMessageHandler<ClientCredentialTokenHandler>();
 
 builder.Services.AddHttpClient<IContactService, ContactService>(opt =>
 {
