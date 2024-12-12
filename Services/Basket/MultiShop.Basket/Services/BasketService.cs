@@ -7,27 +7,23 @@ namespace MultiShop.Basket.Services
     public class BasketService : IBasketService
     {
         private readonly RedisService _redisService;
-
         public BasketService(RedisService redisService)
         {
             _redisService = redisService;
         }
-
-        public async Task DeleteBasket(string id)
+        public async Task DeleteBasket(string userId)
         {
-            await _redisService.GetDb().KeyDeleteAsync(id);
+            await _redisService.GetDb().KeyDeleteAsync(userId);
         }
-
-        public async Task<BasketTotalDto> GetBasket(string id)
+        public async Task<BasketTotalDto> GetBasket(string userId)
         {
-            var existbasket= await _redisService.GetDb().StringGetAsync(id);
-            return JsonSerializer.Deserialize<BasketTotalDto>(existbasket);
-
+            var existBasket = await _redisService.GetDb().StringGetAsync(userId);
+            return JsonSerializer.Deserialize<BasketTotalDto>(existBasket);
         }
-
-        public async Task SaveBasket(BasketTotalDto basket)
+        public async Task SaveBasket(BasketTotalDto basketTotalDto)
         {
-            await _redisService.GetDb().StringSetAsync(basket.UserId, JsonSerializer.Serialize(basket));
+            await _redisService.GetDb().StringSetAsync(basketTotalDto.UserId, JsonSerializer.Serialize(basketTotalDto));
+
         }
     }
 }
