@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MultiShot.WebUI.Services.Interfaces;
 
-namespace MultiShop.WebUI.Controllers
+namespace MultiShot.WebUI.Controllers
 {
     public class UserController : Controller
     {

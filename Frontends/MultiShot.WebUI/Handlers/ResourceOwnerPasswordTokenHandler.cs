@@ -5,7 +5,7 @@ using MultiShot.WebUI.Services.Interfaces;
 using System.Net;
 using System.Net.Http.Headers;
 
-namespace MultiShop.WebUI.Handlers
+namespace MultiShot.WebUI.Handlers
 {
     public class ResourceOwnerPasswordTokenHandler : DelegatingHandler
     {

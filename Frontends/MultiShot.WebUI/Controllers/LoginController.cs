@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using MultiShop.DtoLayer.IdentityDtos.LoginDtos;
+using MultiShot.WebUI.Models;
+using MultiShot.WebUI.Services.Interfaces;
 using MultiShot.WebUI.Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -21,28 +23,17 @@ namespace MultiShop.WebUI.Controllers
             _identityService = identityService;
         }
 
-        //[HttpGet]
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-        //[HttpPost]
-
+        [HttpPost]
         public async Task<IActionResult> Index(SignInDto signInDto)
         {
-            signInDto.Username = "ali01";
-            signInDto.Password = "1111aA*";
             await _identityService.SignIn(signInDto);
             return RedirectToAction("Index", "User");
         }
-        public async Task<IActionResult> SignIn(SignInDto signInDto)
-        {   
-            signInDto.Username = "ali01";
-            signInDto.Password = "1111aA*";
-            await _identityService.SignIn(signInDto);
-            return RedirectToAction("Index", "User");
-        }
-
     }
 }
