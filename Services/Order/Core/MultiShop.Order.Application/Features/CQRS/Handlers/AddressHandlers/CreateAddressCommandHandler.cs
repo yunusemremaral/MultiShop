@@ -14,19 +14,25 @@ namespace MultiShop.Order.Application.Features.CQRS.Handlers.AddressHandlers
         private readonly IRepository<Address> _repository;
         public CreateAddressCommandHandler(IRepository<Address> repository)
         {
-            _repository = repository;  // constructer hazır 
+            _repository = repository;
         }
         public async Task Handle(CreateAddressCommand createAddressCommand)
         {
             await _repository.CreateAsync(new Address
             {
-                City = createAddressCommand.City,   
-                Detail = createAddressCommand.Detail,
+                City = createAddressCommand.City,
+                Detail1 = createAddressCommand.Detail1,
                 District = createAddressCommand.District,
                 UserId = createAddressCommand.UserId,
-      
+                Country = createAddressCommand.Country,
+                Description = createAddressCommand.Description,
+                Detail2 = createAddressCommand.Detail2,
+                Email = createAddressCommand.Email,
+                Name = createAddressCommand.Name,
+                Phone = createAddressCommand.Phone,
+                Surname = createAddressCommand.Surname,
+                ZipCode = createAddressCommand.ZipCode
             });
-
         }
     }
 }

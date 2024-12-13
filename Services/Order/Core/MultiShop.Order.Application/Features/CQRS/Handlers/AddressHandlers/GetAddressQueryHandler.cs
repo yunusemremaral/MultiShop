@@ -1,4 +1,4 @@
-﻿using MultiShop.Order.Application.Features.CQRS.Results.AdressResults;
+﻿using MultiShop.Order.Application.Features.CQRS.Results.AddressResults;
 using MultiShop.Order.Application.Interfaces;
 using MultiShop.Order.Domain.Entities;
 using System;
@@ -16,7 +16,6 @@ namespace MultiShop.Order.Application.Features.CQRS.Handlers.AddressHandlers
         {
             _repository = repository;
         }
-
         public async Task<List<GetAddressQueryResult>> Handle()
         {
             var values = await _repository.GetAllAsync();
@@ -24,11 +23,10 @@ namespace MultiShop.Order.Application.Features.CQRS.Handlers.AddressHandlers
             {
                 AddressId = x.AddressId,
                 City = x.City,
-                Detail = x.Detail,
+                Detail = x.Detail1,
                 District = x.District,
                 UserId = x.UserId
             }).ToList();
         }
-
     }
 }

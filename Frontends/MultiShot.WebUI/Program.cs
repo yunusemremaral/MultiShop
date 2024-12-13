@@ -18,6 +18,7 @@ using MultiShot.WebUI.Services.Concrete;
 using MultiShot.WebUI.Services.Interfaces;
 using MultiShot.WebUI.Settings;
 using MultiShot.WebUI.Services.DiscountServices;
+using MultiShot.WebUI.Services.OrderServices.OrderAddressServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -66,11 +67,18 @@ builder.Services.AddHttpClient<IUserService, UserService>(opt =>
     opt.BaseAddress = new Uri(values.IdentityServerUrl);
 }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
 
+builder.Services.AddHttpClient<IOrderAddressService, OrderAddressService>(opt =>
+{
+    opt.BaseAddress = new Uri(values.IdentityServerUrl);
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
 
 builder.Services.AddHttpClient<IBasketService, BasketService>(opt =>
 {
     opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.Basket.Path}");
 }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
+
 
 builder.Services.AddHttpClient<IDiscountService, DiscountService>(opt =>
 {
