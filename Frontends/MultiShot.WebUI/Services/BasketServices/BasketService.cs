@@ -1,6 +1,6 @@
 ﻿using MultiShop.DtoLayer.BasketDtos;
 
-namespace MultiShop.WebUI.Services.BasketServices
+namespace MultiShot.WebUI.Services.BasketServices
 {
     public class BasketService : IBasketService
     {
@@ -43,7 +43,7 @@ namespace MultiShop.WebUI.Services.BasketServices
         {
             var values = await GetBasket();
             var deletedItem = values.BasketItems.FirstOrDefault(x => x.ProductId == productId);
-            var result=values.BasketItems.Remove(deletedItem);
+            var result = values.BasketItems.Remove(deletedItem);
             await SaveBasket(values);
             return true;
         }

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using MultiShop.WebUI.Services.BasketServices;
+using MultiShot.WebUI.Services.BasketServices;
 using MultiShot.WebUI.Handlers;
 using MultiShot.WebUI.Services.CatalogServices.AboutServices;
 using MultiShot.WebUI.Services.CatalogServices.BrandServices;

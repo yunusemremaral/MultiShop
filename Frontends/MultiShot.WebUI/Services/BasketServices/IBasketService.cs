@@ -1,6 +1,6 @@
 ﻿using MultiShop.DtoLayer.BasketDtos;
 
-namespace MultiShop.WebUI.Services.BasketServices
+namespace MultiShot.WebUI.Services.BasketServices
 {
     public interface IBasketService
     {
