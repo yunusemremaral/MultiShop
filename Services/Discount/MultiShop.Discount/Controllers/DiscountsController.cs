@@ -17,6 +17,13 @@ namespace MultiShop.Discount.Controllers
             _discountService = discountService;
         }
 
+        [HttpGet("GetDiscountCouponCountRate")]
+        public IActionResult GetDiscountCouponCountRate(string code)
+        {
+            var values = _discountService.GetDiscountCouponCountRate(code);
+            return Ok(values);
+        }
+
         [HttpGet]
         public async Task<IActionResult> DiscountCouponList()
         {
@@ -50,6 +57,14 @@ namespace MultiShop.Discount.Controllers
             await _discountService.UpdateDiscountCouponAsync(updateCouponDto);
             return Ok("İndirim kuponu başarıyla güncellendi");
         }
+
+        [HttpGet("GetCodeDetailByCodeAsync")]
+        public async Task<IActionResult> GetCodeDetailByCodeAsync(string code)
+        {
+            var values = await _discountService.GetCodeDetailByCodeAsync(code);
+            return Ok(values);
+        }
+
 
     }
 }

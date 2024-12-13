@@ -2,9 +2,9 @@
 using MultiShop.DtoLayer.BasketDtos;
 using MultiShot.WebUI.Services.BasketServices;
 using MultiShot.WebUI.Services.CatalogServices.ProductServices;
-//using MultiShot.WebUI.Services.DiscountServices;
+using MultiShot.WebUI.Services.DiscountServices;
 
-namespace MultiShop.WebUI.Controllers
+namespace MultiShot.WebUI.Controllers
 {
     public class ShoppingCartController : Controller
     {
@@ -15,8 +15,11 @@ namespace MultiShop.WebUI.Controllers
             _productService = productService;
             _basketService = basketService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string code, int discountRate, decimal totalNewPriceWithDiscount)
         {
+            ViewBag.code = code;
+            ViewBag.discountRate = discountRate;
+            ViewBag.totalNewPriceWithDiscount = totalNewPriceWithDiscount;
             ViewBag.directory1 = "Ana Sayfa";
             ViewBag.directory2 = "Ürünler";
             ViewBag.directory3 = "Sepetim";
