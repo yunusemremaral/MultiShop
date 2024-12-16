@@ -10,15 +10,18 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
 {
-    // jwt kýsmý bu þekilde  hermikro serviste olucak !!
     opt.Authority = builder.Configuration["IdentityServerUrl"];
     opt.Audience = "ResourceOrder";
     opt.RequireHttpsMetadata = false;
 });
 
+
 builder.Services.AddDbContext<OrderContext>();
+
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(IOrderingRepository), typeof(OrderingRepository));
 builder.Services.AddApplicationService(builder.Configuration);
+
 #region
 builder.Services.AddScoped<GetAddressQueryHandler>();
 builder.Services.AddScoped<GetAddressByIdQueryHandler>();
