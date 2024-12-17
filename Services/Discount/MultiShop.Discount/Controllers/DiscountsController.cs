@@ -6,15 +6,23 @@ using MultiShop.Discount.Services;
 
 namespace MultiShop.Discount.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class DiscountsController : ControllerBase
     {
         private readonly IDiscountService _discountService;
         public DiscountsController(IDiscountService discountService)
         {
             _discountService = discountService;
+        }
+
+        [HttpGet("GetDiscountCouponCount")]
+        public async Task<IActionResult> GetDiscountCouponCount()
+        {
+            var values = await _discountService.GetDiscountCouponCount();
+            return Ok(values);
         }
 
         [HttpGet("GetDiscountCouponCountRate")]

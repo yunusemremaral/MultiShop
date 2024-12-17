@@ -22,6 +22,14 @@ namespace MultiShot.Message.Controllers
             return Ok(values);
         }
 
+
+        [HttpGet("GetTotalMessageCount")]
+        public async Task<IActionResult> GetTotalMessageCount()
+        {
+            var values = await _userMessageService.GetTotalMessageCount();
+            return Ok(values);
+        }
+
         [HttpGet("GetMessageSendbox")]
         public async Task<IActionResult> GetMessageSendbox(string id)
         {
