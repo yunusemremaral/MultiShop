@@ -24,6 +24,10 @@ using MultiShot.WebUI.Services.MessageServices;
 using MultiShot.WebUI.Services.UserIdentityServices;
 using MultiShot.WebUI.Services.CargoServices.CargoCompanyServices;
 using MultiShot.WebUI.Services.CargoServices.CargoCustomerServices;
+using MultiShot.WebUI.Services.StatisticServices.CatalogStatisticServices;
+using MultiShot.WebUI.Services.StatisticServices.DiscountStatisticServices;
+using MultiShot.WebUI.Services.StatisticServices.MessageStatisticServices;
+using MultiShot.WebUI.Services.StatisticServices.UserStatisticServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -67,6 +71,27 @@ builder.Services.AddHttpClient<IClientCredentialTokenService, ClientCredentialTo
 
 var values = builder.Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
 
+
+
+builder.Services.AddHttpClient<ICatalogStatisticService, CatalogStatisticService>(opt =>
+{
+    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.Catalog.Path}");
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
+builder.Services.AddHttpClient<IMessageStatisticService, MessageStatisticService>(opt =>
+{
+    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.Message.Path}");
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
+builder.Services.AddHttpClient<IDiscountStatisticService, DiscountStatisticService>(opt =>
+{
+    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.Discount.Path}");
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
+builder.Services.AddHttpClient<IUserStatisticService, UserStatisticService>(opt =>
+{
+    opt.BaseAddress = new Uri(values.IdentityServerUrl);
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
 
 builder.Services.AddHttpClient<IMessageService, MessageService>(opt =>
 {

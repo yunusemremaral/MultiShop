@@ -6,10 +6,9 @@ using MultiShop.Discount.Services;
 
 namespace MultiShop.Discount.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    [AllowAnonymous]
     public class DiscountsController : ControllerBase
     {
         private readonly IDiscountService _discountService;

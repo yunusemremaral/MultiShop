@@ -1,5 +1,5 @@
 ﻿using MultiShop.DtoLayer.CommentDto;
-
+using MultiShot.WebUI.Services.CommentServices;
 using Newtonsoft.Json;
 
 namespace MultiShot.WebUI.Services.CommentServices
@@ -41,6 +41,27 @@ namespace MultiShot.WebUI.Services.CommentServices
             var responseMessage = await _httpClient.GetAsync($"comments/CommentListByProductId/{id}");
             var jsonData = await responseMessage.Content.ReadAsStringAsync();
             var values = JsonConvert.DeserializeObject<List<ResultCommentDto>>(jsonData);
+            return values;
+        }
+
+        public async Task<int> GetTotalCommentCount()
+        {
+            var responseMessage = await _httpClient.GetAsync("comments/GetTotalCommentCount");
+            var values = await responseMessage.Content.ReadFromJsonAsync<int>();
+            return values;
+        }
+
+        public async Task<int> GetActiveCommentCount()
+        {
+            var responseMessage = await _httpClient.GetAsync("comments/GetActiveCommentCount");
+            var values = await responseMessage.Content.ReadFromJsonAsync<int>();
+            return values;
+        }
+
+        public async Task<int> GetPAssiveCommentCount()
+        {
+            var responseMessage = await _httpClient.GetAsync("comments/GetPassiveCommentCount");
+            var values = await responseMessage.Content.ReadFromJsonAsync<int>();
             return values;
         }
     }
