@@ -41,6 +41,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Requirements", "Requirement
 		..\..\..\Downloads\MultiShop-91fa8a15f01474742cc04b6e5adead9e78c4b947\SimpleCode.txt = ..\..\..\Downloads\MultiShop-91fa8a15f01474742cc04b6e5adead9e78c4b947\SimpleCode.txt
 		TextFile1.txt = TextFile1.txt
 		UserExample.txt = UserExample.txt
+		Önemli.txt = Önemli.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cargo", "Cargo", "{C0FC017B-2105-4BD3-B671-2F00B253336D}"
@@ -85,7 +86,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiShop.Image", "Services
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Message", "Message", "{994C88E9-B826-4BBB-9F6A-181198DB926F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.Message", "Services\Message\MultiShop.Message\MultiShop.Message.csproj", "{44ABA716-905E-46F0-9A72-9E248ED93886}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiShop.Message", "Services\Message\MultiShop.Message\MultiShop.Message.csproj", "{44ABA716-905E-46F0-9A72-9E248ED93886}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
