@@ -4,7 +4,7 @@ using MultiShop.Message.DAL.Context;
 using MultiShop.Message.DAL.Entities;
 using MultiShop.Message.Dtos;
 
-namespace MultiShot.Message.Services
+namespace MultiShop.Message.Services
 {
     public class UserMessageService : IUserMessageService
     {

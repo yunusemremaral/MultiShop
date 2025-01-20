@@ -1,6 +1,6 @@
 ﻿using MultiShop.Message.Dtos;
 
-namespace MultiShot.Message.Services
+namespace MultiShop.Message.Services
 {
     public interface IUserMessageService
     {
