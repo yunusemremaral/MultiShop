@@ -90,7 +90,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiShop.Message", "Servic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalRRealTime", "SignalRRealTime", "{6265D49F-DAE2-4AE5-8FD0-C2B3AF0B489A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.SignalRRealTimeApi", "services\SignalRRealTime\MultiShop.SignalRRealTimeApi\MultiShop.SignalRRealTimeApi.csproj", "{465977A6-E42D-4613-99E8-108CA7AA4A31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiShop.SignalRRealTimeApi", "services\SignalRRealTime\MultiShop.SignalRRealTimeApi\MultiShop.SignalRRealTimeApi.csproj", "{465977A6-E42D-4613-99E8-108CA7AA4A31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.WebUI", "Services\Images\MultiShop.WebUI\MultiShop.WebUI.csproj", "{3495D6AA-C0DF-4693-A437-4CB40F4C3D24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -182,6 +184,10 @@ Global
 		{465977A6-E42D-4613-99E8-108CA7AA4A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{465977A6-E42D-4613-99E8-108CA7AA4A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{465977A6-E42D-4613-99E8-108CA7AA4A31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3495D6AA-C0DF-4693-A437-4CB40F4C3D24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3495D6AA-C0DF-4693-A437-4CB40F4C3D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3495D6AA-C0DF-4693-A437-4CB40F4C3D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3495D6AA-C0DF-4693-A437-4CB40F4C3D24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -221,6 +227,7 @@ Global
 		{44ABA716-905E-46F0-9A72-9E248ED93886} = {994C88E9-B826-4BBB-9F6A-181198DB926F}
 		{6265D49F-DAE2-4AE5-8FD0-C2B3AF0B489A} = {F9D8A098-F871-460D-8405-B80D9F85B1FE}
 		{465977A6-E42D-4613-99E8-108CA7AA4A31} = {6265D49F-DAE2-4AE5-8FD0-C2B3AF0B489A}
+		{3495D6AA-C0DF-4693-A437-4CB40F4C3D24} = {E15DEAAB-E8C3-404C-80C3-64B7E6A9C034}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB1BF4AE-C7F5-42D6-8CD1-73A6864EE33F}

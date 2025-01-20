@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MultiShop.Message.Dtos;
-using MultiShot.Message.Services;
+using MultiShop.Message.Services;
 
 namespace MultiShot.Message.Controllers
 {
