@@ -1,0 +1,31 @@
+﻿@model MultiShot.WebUI.Models.MailRequest
+
+@{
+    ViewData["Title"] = "Send Mail";
+    Layout = "~/Views/UILayout/_UILayout.cshtml";
+}
+
+<h1>Send Mail</h1>
+
+<div class="container">
+    <form asp-action="SendMail" method="post">
+        <div class="mb-3">
+            <label for="ReceiverMail" class="form-label">Receiver Email</label>
+            <input type="email" class="form-control" id="ReceiverMail" name="ReceiverMail" placeholder="Enter receiver's email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="Subject" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="Subject" name="Subject" placeholder="Enter email subject" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="Content" class="form-label">Content</label>
+            <textarea class="form-control" id="Content" name="Content" rows="5" placeholder="Enter email content" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Mail</button>
+    </form>
+</div>
+
+

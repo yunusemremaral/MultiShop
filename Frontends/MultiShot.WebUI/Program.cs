@@ -28,6 +28,7 @@ using MultiShot.WebUI.Services.StatisticServices.CatalogStatisticServices;
 using MultiShot.WebUI.Services.StatisticServices.DiscountStatisticServices;
 using MultiShot.WebUI.Services.StatisticServices.MessageStatisticServices;
 using MultiShot.WebUI.Services.StatisticServices.UserStatisticServices;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -202,6 +203,9 @@ builder.Services.AddHttpClient<IContactService, ContactService>(opt =>
     opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.Catalog.Path}");
 }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
 
+
+builder.Services.AddLocalization(opt => { opt.ResourcesPath = "Resources"; });
+builder.Services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -218,6 +222,11 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+var supporttedCulters = new [] { "en", "tr" };
+var localizationOptions= new RequestLocalizationOptions().SetDefaultCulture(supporttedCulters[1])
+    .AddSupportedCultures(supporttedCulters)
+    .AddSupportedUICultures(supporttedCulters);
+app.UseRequestLocalization(localizationOptions);
 
 app.MapControllerRoute(
     name: "default",
