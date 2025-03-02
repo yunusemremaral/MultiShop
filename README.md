@@ -20,6 +20,7 @@ Bu proje, mikro hizmetler mimarisi kullanılarak geliştirilmiştir ve **ASP.NET
 - MailKit
 - EF Core
 - Dapper
+- Docker
 
 ## Frontend Teknolojileri
 - HTML
